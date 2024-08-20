@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ion-title {
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.conteudo-area {
+  background-color: black;
+}
+
+* {
+  color: black;
+}
+
+
+
+ion-menu-item {
+
+  padding: 25px;
+
+
+
+}
+
+ion-content {
+  overflow-y: hidden;
+
+}
+
+.logo {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  // background-image: linear-gradient(to right, #1cc88a 10%, #13855c 100%);
+  background-image: url('../../assets/Road.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  justify-content: center;
+  overflow-y: hidden;
+}
+
+.imagem {
+  width: 60%;
+  margin-bottom: 12px;
+
+ 
+}
+
+.text-light{
+  color: #fff;
+}
+
+.primary{
+  background-color: #003300;
+}
+.super-titulo{
+  padding-top: 7xp;
+  color: white;
+  text-align: center;
+}
+
+.margin-bottom {
+  margin-bottom: 100px;
+
+}
+
+.danger {
+  color: red;
+}
+
+.active {
+  background-color: #003300;
+  color:white;
+}
+
+.margin-top {
+  margin-top: 100px;
+  background-color: #a6a6a6;
+
+}
+
+.icon {
+  margin-right: 40px;
+
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.conteudo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 60%;
+  background-color: #003300;
+  opacity: 0.9;
+  margin: 20px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.titulo-acima{
+  background-color: #003300;
+  height: 100%;
+  padding: 20px;
+  color: white;
+}
+.maiusculo{
+  text-transform: uppercase;
+  color: white;
+}

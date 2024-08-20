@@ -1,0 +1,104 @@
+<ion-app>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title class="titulo-acima">Cadastrar Rotas</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content [fullscreen]="true">
+
+      <div class="logo">
+        
+        <div class="tudo">
+       
+            <form (ngSubmit)="onSubmit()">
+
+              <ion-item>
+                <ion-label position="stacked">Origem</ion-label>
+                <ion-input type="text" name="Origem"  [(ngModel)]="Origem"></ion-input>
+              </ion-item>
+          
+              <ion-item>
+                <ion-label position="stacked">Data</ion-label>
+                <ion-input type="date" name="Data" [value]="Data"></ion-input>
+              </ion-item>
+          
+              <ion-item>
+                <ion-label position="stacked">Hora Saída</ion-label>
+                <ion-input type="time"  [(ngModel)]="HoraSaida" name="HoraSaida"></ion-input>
+              </ion-item>
+          
+              <ion-item>
+                <ion-label position="stacked">Km Inicial</ion-label>
+                <ion-input type="text" [(ngModel)]="KmInicial" name="KmInicial" disabled></ion-input>
+              </ion-item>
+          
+              <ion-item>
+                <ion-label position="stacked">Veículo</ion-label>
+                <ion-select name="IDVeiculo" (ionChange)="onVeiculoChange()" [(ngModel)]="IDVeiculo">
+                  <ion-select-option *ngFor="let veiculo of dadosVeiculos" [value]="veiculo.ID">
+                    {{ veiculo.Nome }}
+                  </ion-select-option>
+                </ion-select>
+              </ion-item>
+          
+              <ion-item>
+                <ion-label position="stacked">Destino</ion-label>
+                <ion-input type="text"  [(ngModel)]="Destino" name="Destino"></ion-input>
+              </ion-item>
+          
+              <ion-item>
+                <ion-label position="stacked">Hora Chegada</ion-label>
+                <ion-input type="time" name="HoraChegada"  [(ngModel)]="HoraChegada" [value]="HoraChegada"></ion-input>
+              </ion-item>
+          
+              <ion-item>
+                <ion-label position="stacked">Km Final</ion-label>
+                <ion-input type="number" [(ngModel)]="KmFinal" name="KmFinal"></ion-input>
+              </ion-item>
+          
+              <ion-button color="primary" class="btn-salvar" type="submit">Salvar</ion-button>
+
+              <ion-button color="primary" class="btn-esqueci" (click)="esqueci()" >Esqueci de lançar</ion-button>
+          
+            </form>
+
+        </div>
+      
+    </div>
+
+  </ion-content>
+  
+  <ion-tabs>
+
+    <ion-tab-bar slot="bottom">
+
+      <ion-tab-button (click)="home()" tab="home">
+        <ion-icon name="home"></ion-icon>
+      </ion-tab-button>
+
+
+      <ion-tab-button (click)="rotas()" class="active" tab="library">
+        <ion-icon class="text-light" name="map-outline"></ion-icon>
+      </ion-tab-button>
+
+      <ion-tab-button (click)="relatorios()" tab="library">
+        <ion-icon  name="document-outline"></ion-icon>
+      </ion-tab-button>
+
+      <ion-tab-button (click)="abastecimento()" tab="library">
+        <ion-icon  name="funnel"></ion-icon>
+      </ion-tab-button>
+
+      <ion-tab-button (click)="combustivel()" tab="logout">
+        <ion-icon name="clipboard-outline"></ion-icon>
+      </ion-tab-button>
+
+      <ion-tab-button (click)="sair()" tab="logout">
+        <ion-icon color="danger" name="log-out-outline"></ion-icon>
+      </ion-tab-button>
+
+    </ion-tab-bar>
+  </ion-tabs>
+
+</ion-app>

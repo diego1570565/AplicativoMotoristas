@@ -1,0 +1,72 @@
+<ion-app>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title class="titulo-acima">Verificar Rotas</ion-title>
+
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content [fullscreen]="true">
+
+    <div class="logo">
+      <!-- Área de Dados -->
+      <div class="area-dados">
+        <ion-input type="date" [(ngModel)]="data" name="data" class="data" (ionChange)="filtrarRegistros()"></ion-input>
+      </div>
+
+      <div class="area-dados">
+        <ion-input type="date" [(ngModel)]="data2" name="data2" class="data"
+          (ionChange)="filtrarRegistros()"></ion-input>
+      </div>
+
+      <!-- Lista de Registros -->
+      <ion-list class="lista-registros">
+        <ion-item *ngFor="let registro of registros" class="registro-item">
+          <ion-card (click)="editar(registro.ID)" class="registro-card"> <!-- Remova as chaves duplas {{ }} -->
+            <ion-card-header class="registro-card-header">
+              <ion-card-subtitle class="registro-data">Data: {{ registro.Data }}</ion-card-subtitle>
+            </ion-card-header>
+
+            <ion-card-content class="registro-card-content">
+              <ion-label class="registro-hora">Hora Chegada: {{ registro.HoraChegada }}</ion-label>
+              <ion-label class="registro-veiculo">Veiculo: {{ registro.Nome_Carro }}</ion-label>
+              <ion-label class="registro-kminicial">Km Inicial: {{ registro.KmInicial }}</ion-label>
+              <ion-label class="registro-kmfinal">Km Final: {{ registro.KmFinal }}</ion-label>
+            </ion-card-content>
+          </ion-card>
+        </ion-item>
+      </ion-list>
+
+    </div>
+
+  </ion-content>
+
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button (click)="home()" tab="home">
+        <ion-icon name="home"></ion-icon>
+      </ion-tab-button>
+
+      <ion-tab-button (click)="rotas()" tab="library">
+        <ion-icon name="map-outline"></ion-icon>
+      </ion-tab-button>
+
+      <ion-tab-button class="active" (click)="relatorios()" tab="library">
+        <ion-icon class="text-light" name="document-outline"></ion-icon>
+      </ion-tab-button>
+
+      <ion-tab-button (click)="abastecimento()" tab="library">
+        <ion-icon name="funnel"></ion-icon>
+      </ion-tab-button>
+
+      <ion-tab-button (click)="combustivel()" tab="logout">
+        <ion-icon name="clipboard-outline"></ion-icon>
+      </ion-tab-button>
+
+      <ion-tab-button (click)="sair()" tab="logout">
+        <ion-icon color="danger" name="log-out-outline"></ion-icon>
+      </ion-tab-button>
+
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-app>
